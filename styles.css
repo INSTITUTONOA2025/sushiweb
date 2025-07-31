@@ -1,0 +1,232 @@
+/* ---- General & Variables ---- */
+:root {
+    --primary-color: #E44D26; /* Un color de acento vibrante como el salmón o naranja */
+    --dark-color: #1a1a1a;
+    --light-color: #f4f4f4;
+    --grey-color: #333;
+    --font-title: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    margin: 0;
+    line-height: 1.6;
+    background: var(--dark-color);
+    color: var(--light-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+h1, h2 {
+    font-family: var(--font-title);
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+/* ---- Header & Nav ---- */
+header {
+    background: rgba(0,0,0,0.7);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+nav .logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: var(--font-title);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* ---- Hero Section ---- */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1553621042-f6e147245754?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1625&q=80') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 1rem;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s;
+    margin: 0 0.5rem;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: #fff;
+    border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--primary-color);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-secondary:hover {
+    background: #fff;
+    color: var(--dark-color);
+}
+
+
+/* ---- Sections ---- */
+section {
+    padding: 4rem 0;
+}
+
+#nosotros {
+    background: var(--grey-color);
+}
+
+.menu-grid, .locales-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.menu-item, .local-card {
+    background: var(--grey-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-item:hover, .local-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.menu-item h3, .local-card h3 {
+    font-family: var(--font-title);
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+/* ---- Form ---- */
+.reservas-form {
+    background: var(--grey-color);
+}
+
+#booking-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+#booking-form input, #booking-form button {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #555;
+    background: #2b2b2b;
+    color: #fff;
+    border-radius: 5px;
+}
+
+#booking-form input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Makes calendar icon visible on dark background */
+}
+
+
+#booking-form button {
+    grid-column: 1 / -1; /* Button spans full width */
+    cursor: pointer;
+    background: var(--primary-color);
+    border: none;
+    font-weight: bold;
+}
+
+/* ---- Footer ---- */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #000;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
